@@ -1,0 +1,32 @@
+<div>
+    Navbar
+</div>
+
+<div class="login_container">
+    <form *ngIf="activeForm === 'login'" [formGroup]="loginForm" (ngSubmit)="login()">
+        <input type="email" formControlName="email" id="">
+        <input type="password" formControlName="password" id="">
+        <button type="submit">Login</button>
+
+        <p (click)="toggleForm('register')">
+            register
+        </p>
+    </form>
+</div>
+
+
+
+
+
+
+
+<form *ngIf="activeForm === 'register'" [formGroup]="registerForm" (ngSubmit)="register()">
+    <input type="text" formControlName="username" id="">
+    <input type="email" formControlName="email" id="">
+    <input type="password" formControlName="password" id="">
+    <button type="submit">Register</button>
+
+    <p (click)="toggleForm('login')">
+        login
+    </p>
+</form>
